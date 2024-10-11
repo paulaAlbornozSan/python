@@ -1,0 +1,27 @@
+def obtener_imc(peso, altura):     
+    return peso / (altura ** 2)
+
+def determinar_riesgo(imc):     
+    if imc < 18.5:         
+        return "Bajo"     
+    elif 18.5 <= imc < 25:         
+        return "Bajo"     
+    elif 25 <= imc < 30:         
+        return "Moderado"     
+    elif 30 <= imc < 35:         
+        return "Moderado"     
+    else:         
+        return "Obesidad", "Alto"
+def ejecutar():     
+    cantidad_personas = int(input("¿Cuántas personas deseas registrar? "))     
+    for i in range(cantidad_personas):        
+        nombre = input("Escribe el nombre de la persona: ")         
+        apellido = input("Escribe el apellido de la persona: ")         
+        altura = float(input("Introduce la altura en metros: "))         
+        peso = float(input("Introduce el peso en kilogramos: "))         
+        imc = obtener_imc(peso, altura)         
+        riesgo = determinar_riesgo(imc)[1]         
+        print(f"Nombre completo: {nombre} {apellido}")         
+        print(f"Riesgo asociado: {riesgo}\n")
+if __name__ == "__main__":     
+    ejecutar()
